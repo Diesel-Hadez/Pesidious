@@ -44,7 +44,7 @@ from pyfiglet import Figlet
 # for local model
 from gym_malware.envs.utils.pefeatures import PEFeatureExtractor
 from gym_malware.envs.utils.pefeatures2 import PEFeatureExtractor2
-from sklearn.externals import joblib
+import joblib
 feature_extractor =  PEFeatureExtractor()
 feature_extractor2 =  PEFeatureExtractor2()
 
