@@ -3,6 +3,9 @@
 
 # Malware Mutation using Deep Reinforcement Learning and GANs 
 
+NOTE: This is a fork to work with newer versions of python, as well as use the model provided in [secml_malware](https://github.com/pralab/secml_malware) instead of the provided outdated pickle "pkl" files that is
+incompatible with newer versions of sklearn.
+
 The purpose of the tool is to use artificial intelligence to mutate a malware (PE32 only) sample to bypass AI powered classifiers while keeping its functionality intact. In the past, notable work has been done in this domain with researchers either looking at reinforcement learning or generative adversarial networks as their weapons of choice to modify the states of a malware executable in order to deceive anti-virus agents. Our solution makes use of a combination of deep reinforcement learning and GANs in order to overcome some of the limitations faced while using these approaches independently as showen below.
 
 
@@ -23,8 +26,20 @@ The following steps will guide you through all the installations required to set
     ```sh
     git clone https://github.com/CyberForce/Pesidious
     ```
-1. Move into the project directory. 
 
+1. Clone the DikeDataset.
+    ```sh
+    git clone https://github.com/iosifache/DikeDataset.git
+    ```
+
+1. Install [secml_malware](https://github.com/pralab/secml_malware)
+    ```sh
+    git clone https://github.com/zangobot/secml_malware.git
+    cd secml_malware
+    pip install -r requirements.txt
+    ```
+
+1. Move into the project directory. 
     ```sh
     cd Pesidious
     ```
