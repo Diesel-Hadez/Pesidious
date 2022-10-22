@@ -9,7 +9,7 @@ ipython
 ipython-genutils
 jedi==0.15.1
 kiwisolver
-lief
+lief==0.11.5
 matplotlib
 numpy
 parso==0.5.1
