@@ -62,9 +62,9 @@ def put_banner():
 
 put_banner()
 
-#env_id = "malware-score-v0"
-#env = gym.make(env_id)
-#env.seed(123)
+env_id = "malware-score-v0"
+env = gym.make(env_id)
+env.seed(123)
 device = torch.device("cpu")
 
 from collections import deque
@@ -187,6 +187,7 @@ def generate_mutated_malware(file, model, args):
 		state = pe.extract( bytez )
 		state_norm = rn(state)
 		state_norm = torch.from_numpy(state_norm).float().unsqueeze(0).to(device)
+		print(state_norm.shape)
 		
 		actions = model.forward(state_norm)
 		action = torch.argmax(actions).item()

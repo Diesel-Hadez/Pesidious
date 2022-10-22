@@ -223,12 +223,12 @@ def main():
             info(f"[+] Score for {args.f} is : {score}")
         else:
             info("[*] Querying Local Model ...")
-            local_model = joblib.load(
-                os.path.join(module_path, args.local_model))
+            # local_model = joblib.load(
+                # os.path.join(module_path, args.local_model))
             local_model_threshold = 0.60
             score, label = get_label_local(bytez, local_model_threshold)
             info("[+] Results:")
-            info("\t[+] Score : {score}")
+            info(f"\t[+] Score : {score}")
             if label == 1:
                 info("\t[+] Label : [bold red]Malware \n",
                      extra={"markup": True})

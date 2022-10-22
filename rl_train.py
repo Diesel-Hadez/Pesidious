@@ -77,8 +77,8 @@ def parse_args():
 	parser.add_argument('--rl_mutations', type=float, default=80,
 						help='number of maximum mutations allowed (default: 80)')
 	
-	parser.add_argument('--rl_save_model_interval', type=float, default=500,
-						help='Interval at which models should be saved (default: 500)') #gitul
+	parser.add_argument('--rl_save_model_interval', type=float, default=50,
+						help='Interval at which models should be saved (default: 50)') #gitul
 	parser.add_argument('--rl_output_directory', type= Path, default=Path("models"),
 						help='Path to save the models in (default: models)') #gitul
 
