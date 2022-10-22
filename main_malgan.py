@@ -20,7 +20,6 @@ from rich.traceback import install
 
 from malgan import MalGAN, MalwareDataset, BlackBoxDetector
 
-
 def setup_logger(log_level: str, filename: str = "MalGAN_" + str(date.today()) + ".log"):
 
     log_dir = "Logs"

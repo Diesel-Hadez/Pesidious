@@ -298,8 +298,9 @@ class MalGAN(nn.Module):
         logging.debug(f"[*] Starting training epoch #{epoch_num} with {num_batch} batches")
         desc = f"Epoch {epoch_num} Progress"
         batch_generator = merged_data = zip(self._mal_data.train, self._ben_data.train)
+        import tqdm
         if not quiet_mode:
-            batch_generator = track(merged_data, total=num_batch, description=desc, transient=True)
+            batch_generator = tqdm.tqdm(merged_data, total=num_batch, desc=desc)
         for (m, _), (b, _) in batch_generator:
             if self._is_cuda:
                 m, b = m.cuda(), b.cuda()
