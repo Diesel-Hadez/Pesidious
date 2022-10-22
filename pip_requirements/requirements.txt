@@ -39,5 +39,5 @@ wcwidth==0.1.7
 tqdm==4.30.0
 torch
 typing>=3.6.6
-tensorboardX==1.6
+tensorboardX
 rich
