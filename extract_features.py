@@ -301,6 +301,8 @@ def feature_generation(pe_files: list, feature_vector_mapping: dict):
 
         try:
             binary = lief.parse(file)
+            if binary is None:
+                continue
             imports = [e.name + ':' + lib.name.lower() for lib in binary.imports for e in lib.entries]
             imports = process_imported_functions_output(imports)   
 
@@ -318,7 +320,11 @@ def feature_generation(pe_files: list, feature_vector_mapping: dict):
 
         except:
             exception(f"\t[-] {file} is not parseable!")
-            raise Exception(f"\t[-] {file} is not parseable!")
+            # Comment this out
+            # raise Exception(f"\t[-] {file} is not parseable!")
+            continue
+        if binary is None:
+            continue
             
         
         # pe_files_feature_vectors.append(feature_vector)
