@@ -742,8 +742,8 @@ def features_extractor(adversarial_vector: str, feature_mapping: str):
             f"\t\t[+] Mapping imports and sections from batch {index}  with {len(adversarial_feature_vector[index])} adversarial feature vectors ...",
         )
 
-        for i in track(
-            range(len(adversarial_feature_vector[index])), description=" Extracting ...", transient=True
+        for i in tqdm(
+            range(len(adversarial_feature_vector[index])), desc=" Extracting ..."
         ):
             sample = adversarial_feature_vector[index][i]
             sample = sample.tolist()
@@ -854,7 +854,7 @@ def write_to_file(feature, filepath: str, is_imports: bool):
     with open(filepath, "w") as data:
         data.write(plaintext)
 
-    info(f"\t[+] {'Imports' if is_import else 'Sections'} written to - [bold green]{filepath}", extra={"markup":True})
+    info(f"\t[+] {'Imports' if is_imports else 'Sections'} written to - [bold green]{filepath}", extra={"markup":True})
 
 
 def call_c_application_for_imports(
